@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@assets/*": ["src/assets/*"],
+      "@modules/*": ["src/modules/*"],
+      "@pages/*": ["src/pages/*"],
+      "@shared/*": ["src/shared/*"],
+      "@components/*": ["src/shared/components/*"],
+      "@utils/*": ["src/shared/utils/*"],
+      "@types/*": ["src/types.ts*"],
+      "@/*": ["./*"]
+    },
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "esModuleInterop": false,
+    "isolatedModules": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+    "noEmit": true,
+    "incremental": true,
+    "skipLibCheck": true
+  },
+  "include": [
+		"src/**/*",
+		"src/vite-env.d.ts"
+	],
+  "files": [],
+  "references": [
+    // { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
