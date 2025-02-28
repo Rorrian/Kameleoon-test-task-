@@ -1,0 +1,43 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	min-width: 95px;
+	max-width: fit-content;
+	height: 30px;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--green);
+	background-color: var(--green);
+	color: var(--white);
+	cursor: pointer;
+	transition: opacity var(--transition);
+
+	font-family: var(--fonts-second);
+	font-weight: 600;
+	line-height: 1.2;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.back-button {
+	display: flex;
+	align-items: center;
+	column-gap: 19px;
+
+	margin-top: auto;
+	width: fit-content;
+	cursor: pointer;
+
+	font-family: var(--fonts-third);
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 1.36;
+}
+
+.dashboard__search {
+	margin-top: 40px;
+	margin-bottom: var(--space-md);
+}

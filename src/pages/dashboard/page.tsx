@@ -1,19 +1,38 @@
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
+import { Test } from '@shared/types'
+import { Stub } from '@shared/components'
+import { SearchField, useSearch } from '@modules/search'
+import { mockTests } from '@shared/mocks/mockTests'
+import { SearchIcon } from '@shared/icons'
+import { Table } from '@modules/table'
 
 export function DashboardPage() {
-  const navigate = useNavigate()
+  const [tests, setTests] = useState<Test[]>(mockTests)
+  const { searchTerm, setSearchTerm } = useSearch('')
 
-  const redirectToResults = (testId: string) => navigate(`/results/${testId}`)
-  const redirectToFinalize = (testId: string) => navigate(`/finalize/${testId}`)
-
-  const testId = '1'
+  useEffect(() => {}, [])
 
   return (
-    <div>
-      <h1>DashboardPage</h1>
+    <div className="wrapper">
+      <h1 className="title">Dashboard</h1>
 
-      <button onClick={() => redirectToResults(testId)}>Results</button>
-      <button onClick={() => redirectToFinalize(testId)}>Finalize</button>
+      <SearchField
+        className="dashboard__search"
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        startContent={<SearchIcon width={13} height={14} />}
+        endContent={<span>{tests.length} tests</span>}
+      />
+
+      {!!tests.length ? (
+        <Table data={tests} />
+      ) : (
+        <Stub
+          message="There are no tests to display."
+          onReset={() => setSearchTerm('')}
+        />
+      )}
     </div>
   )
 }

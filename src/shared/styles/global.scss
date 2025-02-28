@@ -1,0 +1,81 @@
+#root {
+	height: 100%;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+
+	scroll-behavior: smooth;
+	min-width: 320px;
+
+	font-family: var(--font-family);
+	font-size: var(--font-size);
+	font-weight: 400;
+	line-height: var(--line-height);
+	color: var(--black);
+	text-size-adjust: 100%;
+	text-rendering: optimizespeed;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	display: inline-block;
+
+	color: inherit;
+	text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+	background-color: transparent;
+	border: none;
+	outline: none;
+
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+}
+
+*::-webkit-scrollbar {
+	width: 3px;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: #b6b6b6;
+	border-radius: 20px;
+	border: 1px solid #b6b6b6;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 12px;
+	border: 1px solid rgba(0, 0, 0, 0.4);
+}

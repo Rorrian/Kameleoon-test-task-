@@ -1,0 +1,29 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--space-sm);
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--space-sm);
+}
+
+.row {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+	align-items: center;
+
+	padding: var(--space-md);
+	background-color: var(--white);
+}
+
+.headerRow {
+	background-color: inherit;
+	color: #999999;
+
+	font-weight: 500;
+	font-size: 11px;
+	text-transform: uppercase;
+}

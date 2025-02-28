@@ -1,15 +1,22 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+
+import { ArrowIcon } from '@shared/icons'
 
 export function ResultsPage() {
+  const navigate = useNavigate()
   const { testId } = useParams<{ testId: string }>()
 
-  if (!testId) return <div>Идентификатор теста не задан</div>
+  if (!testId) return <div>Test ID not set</div>
 
   return (
-    <div>
-      <h1>ResultsPage</h1>
+    <div className="wrapper">
+      <h1 className="title">Results</h1>
+      <p className="subtitle">Order basket redesing</p>
 
-      <h2>Результаты теста #{testId}</h2>
+      <button className="back-button" onClick={() => navigate(-1)}>
+        <ArrowIcon width={8.83} height={16} />
+        Back
+      </button>
     </div>
   )
 }

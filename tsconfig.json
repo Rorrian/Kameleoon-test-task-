@@ -26,6 +26,7 @@
     "isolatedModules": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
+		"types": ["vite-plugin-svgr/client"],
     "noEmit": true,
     "incremental": true,
     "skipLibCheck": true

@@ -1,0 +1,19 @@
+.stub {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	row-gap: 37px;
+
+	margin-top: 149px;
+}
+
+.text {
+	max-width: 810px;
+
+	font-family: var(--fonts-second);
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.2;
+	text-align: center;
+}

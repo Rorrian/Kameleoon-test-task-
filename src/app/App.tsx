@@ -1,4 +1,4 @@
-import { Navigation } from '@shared/components/Navigation/Navigation'
+import { Navigation } from '@shared/components'
 
 export function App() {
   return (

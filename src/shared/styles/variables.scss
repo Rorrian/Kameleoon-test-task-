@@ -1,0 +1,40 @@
+:root {
+	// Fonts
+	--fonts-primary: "Roboto", sans-serif;
+	--fonts-second: "Montserrat", sans-serif;
+	--fonts-third: "Nunito", sans-serif;
+
+	// Global
+	--font-family: var(--fonts-primary);
+	--font-size: 12px;
+	--line-height: 1.16;
+	--border-radius: 10px;
+	--border-radius-lg: 15px;
+	--box-shadow: 0px 0px 20px 0px #00000026;
+	--transition: 0.3s ease-in-out;
+
+	// Colors
+	--black: #222222;
+	--white: #fff;
+	--primary: #fafafa;
+
+	--dark-gray: #7d7d7d;
+	--gray: #5c5c5c;
+	--gray-light: #ebebeb;
+
+	--brown-light: #d1d1d1;
+	--green: #2ee5ac;
+	--red: #fe4848;
+	--orange: #ff8346;
+	--purple: #8686ff;
+	--lavender: #c2c2ff;
+	--pink: #e14165;
+
+	--bg: var(--primary);
+	--color: var(--gray);
+	--border: var(--gray-light);
+
+	// Spaces
+	--space-sm: 4px;
+	--space-md: 15px;
+}
