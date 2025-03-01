@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 import { useMemo } from 'react'
 
-import { Test, TestStatus } from '@shared/types'
+import { Test, Status } from '@shared/types'
 
 import styles from './TestItem.module.scss'
 
@@ -15,7 +15,7 @@ interface TestItemProps {
 export const TestItem = ({ test }: TestItemProps) => {
   const navigate = useNavigate()
 
-  const { id, title, type, status, site } = test
+  const { id, name, type, status, siteUrl } = test
 
   const borderColor = useMemo(
     () => BORDER_COLORS[Math.floor(Math.random() * BORDER_COLORS.length)],
@@ -24,21 +24,21 @@ export const TestItem = ({ test }: TestItemProps) => {
 
   return (
     <div
-      className={styles.wrapper}
+      className={styles.testItem}
       style={{
         borderColor: borderColor,
       }}
     >
-      <span className={styles.title}>{title}</span>
+      <span className={styles.name}>{name}</span>
       <span>{type}</span>
       <span
         className={classNames(styles.status, styles[test.status.toLowerCase()])}
       >
         {status}
       </span>
-      <span>{site}</span>
+      <span>{siteUrl ?? 'Site not set'}</span>
 
-      {status === TestStatus.DRAFT ? (
+      {status === Status.DRAFT ? (
         <button
           className={classNames('button', styles.button, styles.finalize)}
           onClick={() => navigate(`/finalize/${id}`)}

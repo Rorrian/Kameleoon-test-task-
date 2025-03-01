@@ -1,4 +1,4 @@
-.wrapper {
+.table {
 	display: flex;
 	flex-direction: column;
 	row-gap: var(--space-sm);
@@ -16,14 +16,31 @@
 	align-items: center;
 
 	padding: var(--space-md);
-	background-color: var(--white);
 }
 
-.headerRow {
+.headerButton {
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
+
 	background-color: inherit;
-	color: #999999;
+	transition: color var(--transition);
+	cursor: pointer;
 
 	font-weight: 500;
 	font-size: 11px;
 	text-transform: uppercase;
+	text-align: start;
+	color: var(--brown);
+
+	&:hover {
+		color: var(--gray);
+	}
+}
+
+.iconUp {
+	transform: rotate(90deg);
+}
+.iconDown {
+	transform: rotate(270deg);
 }

@@ -1,24 +1,21 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import { debounce } from '@shared/utils/debounce'
 
 export const useSearch = (initValue: string) => {
   const [searchTerm, setSearchTerm] = useState(initValue)
 
-  const debouncedCallback = useCallback(
-    debounce((value: string) => setSearchTerm(value), 300),
+  const debouncedSetSearchTerm = useCallback(
+    debounce((value: string) => setSearchTerm(value), 50),
     [],
   )
 
-  useEffect(() => {
-    if (searchTerm) {
-      debouncedCallback(searchTerm)
-    }
+  const handleSearchChange = useCallback(
+    (value: string) => {
+      debouncedSetSearchTerm(value)
+    },
+    [debouncedSetSearchTerm],
+  )
 
-    return () => {
-      debouncedCallback.cancel()
-    }
-  }, [searchTerm, debouncedCallback])
-
-  return { searchTerm, setSearchTerm }
+  return { searchTerm, setSearchTerm: handleSearchChange }
 }

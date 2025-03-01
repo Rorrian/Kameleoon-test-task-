@@ -1,17 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 
 import { Test } from '@shared/types'
 import { Stub } from '@shared/components'
 import { SearchField, useSearch } from '@modules/search'
-import { mockTests } from '@shared/mocks/mockTests'
 import { SearchIcon } from '@shared/icons'
-import { Table } from '@modules/table'
+import { TestsTable, useTests } from '@modules/table'
+import { pluralize } from '@shared/utils'
 
 export function DashboardPage() {
-  const [tests, setTests] = useState<Test[]>(mockTests)
+  const { tests, loading, error } = useTests()
   const { searchTerm, setSearchTerm } = useSearch('')
 
-  useEffect(() => {}, [])
+  const unfilteredTests = useMemo(() => tests, [tests])
+  const filteredTests = useMemo(() => {
+    return tests.filter((test: Test) =>
+      test.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    )
+  }, [tests, searchTerm])
+
+  if (loading) return <div className="center">Loading...</div>
+  if (error) return <div className="center">{error}</div>
 
   return (
     <div className="wrapper">
@@ -19,14 +27,18 @@ export function DashboardPage() {
 
       <SearchField
         className="dashboard__search"
+        startContent={<SearchIcon width={13} height={14} />}
+        endContent={
+          <span>
+            {pluralize(filteredTests.length, ['test', 'test', 'tests'])}
+          </span>
+        }
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
-        startContent={<SearchIcon width={13} height={14} />}
-        endContent={<span>{tests.length} tests</span>}
       />
 
-      {!!tests.length ? (
-        <Table data={tests} />
+      {!!unfilteredTests.length ? (
+        <TestsTable tests={searchTerm ? filteredTests : unfilteredTests} />
       ) : (
         <Stub
           message="There are no tests to display."

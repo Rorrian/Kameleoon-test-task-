@@ -1,4 +1,4 @@
-.wrapper {
+.testItem {
 	display: grid;
 	grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
 	align-items: center;
@@ -15,7 +15,7 @@
 	}
 }
 
-.title {
+.name {
 	display: flex;
 	align-items: center;
 
@@ -27,6 +27,7 @@
 
 .status {
 	font-weight: 500;
+	text-transform: lowercase;
 
 	&.online {
 		color: var(--green);
@@ -40,6 +41,9 @@
 	&.stopped {
 		color: var(--red);
 	}
+}
+.status::first-letter {
+	text-transform: uppercase;
 }
 
 .button {

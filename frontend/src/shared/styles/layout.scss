@@ -4,5 +4,15 @@
 
 	padding: 41px 48px 44px 48px;
 	height: 100%;
+	min-height: 100vh;
 	background-color: var(--bg);
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	min-height: 100vh;
 }

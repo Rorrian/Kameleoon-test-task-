@@ -1,3 +1,4 @@
-import { Table } from './components/Table/Table'
+import { TestsTable } from './components/TestsTable/TestsTable'
+import { useTests } from './hooks/useTests'
 
-export { Table }
+export { TestsTable, useTests }

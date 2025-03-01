@@ -5,21 +5,21 @@ import styles from './SearchField.module.scss'
 
 interface SearchFieldProps {
   className?: string
-  searchTerm: string
-  setSearchTerm: (value: string) => void
   startContent: ReactNode
   endContent: ReactNode
+  searchTerm: string
+  setSearchTerm: (value: string) => void
 }
 
 export const SearchField = ({
   className,
-  searchTerm,
-  setSearchTerm,
   startContent,
   endContent,
+  searchTerm,
+  setSearchTerm,
 }: SearchFieldProps) => {
   return (
-    <div className={classNames(styles.wrapper, className)}>
+    <div className={classNames(styles.inputWrapper, className)}>
       <div className={styles.inner}>
         {startContent}
 
