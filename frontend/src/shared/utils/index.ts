@@ -20,6 +20,7 @@ export const pluralize = (
   count: number,
   forms: [string, string, string],
 ): string => {
+  if (count < 0) throw new Error('Count cannot be negative')
   if (count === 1) return `${count} ${forms[0]}`
   if (count > 1 && count < 5) return `${count} ${forms[1]}`
   return `${count} ${forms[2]}`

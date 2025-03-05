@@ -24,6 +24,7 @@ export const SearchField = ({
         {startContent}
 
         <input
+          aria-label="Search tests"
           className={styles.input}
           placeholder="What test are you looking for?"
           type="text"

@@ -19,7 +19,11 @@ export const HeaderButton = ({
   onSort,
 }: HeaderButtonProps) => {
   return (
-    <button className={styles.headerButton} onClick={() => onSort(field)}>
+    <button
+      aria-label={`Sort by ${title}`}
+      className={styles.headerButton}
+      onClick={() => onSort(field)}
+    >
       {title}
 
       {sortField === field && (

@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { ArrowIcon } from '@shared/icons'
+import { RoutePaths } from '@shared/utils/navigation'
 
 export function FinalizePage() {
   const navigate = useNavigate()
@@ -13,7 +14,14 @@ export function FinalizePage() {
       <h1 className="title">Finalize</h1>
       <p className="subtitle">Spring promotion</p>
 
-      <button className="back-button" onClick={() => navigate(-1)}>
+      <button
+        className="back-button"
+        onClick={() =>
+          window.history.length > 1
+            ? navigate(-1)
+            : navigate(RoutePaths.DASHBOARD)
+        }
+      >
         <ArrowIcon width={8.83} height={16} />
         Back
       </button>

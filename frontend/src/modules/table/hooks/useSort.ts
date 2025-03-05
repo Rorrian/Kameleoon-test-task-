@@ -45,31 +45,6 @@ export const useSort = ({
     )
   }
 
-  // const sortedTests = useMemo(
-  //   () =>
-  //     [...tests].sort((a, b) => {
-  //       if (sortField === SortField.NAME) {
-  //         return sortOrder === SortOrder.ASC
-  //           ? a.name.localeCompare(b.name)
-  //           : b.name.localeCompare(a.name)
-  //       } else if (sortField === SortField.TYPE) {
-  //         return sortOrder === SortOrder.ASC
-  //           ? a.type.localeCompare(b.type)
-  //           : b.type.localeCompare(a.type)
-  //       } else if (sortField === SortField.SITE) {
-  //         const siteA = a.siteUrl || ''
-  //         const siteB = b.siteUrl || ''
-  //         return sortOrder === SortOrder.ASC && siteA && siteB
-  //           ? siteA.localeCompare(siteB)
-  //           : siteB.localeCompare(siteA)
-  //       } else {
-  //         const orderMarker = sortOrder === SortOrder.ASC ? 1 : -1
-  //         return (StatusOrder[a.status] - StatusOrder[b.status]) * orderMarker
-  //       }
-  //     }),
-  //   [tests, sortField, sortOrder],
-  // )
-
   const sortedTests = useMemo(() => {
     if (!sortField) return [...tests]
 
